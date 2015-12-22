@@ -1,0 +1,17 @@
+<ion-view view-title="Delete Contacts" name="dashboard-view" ng-controller="meController">
+  <ion-content class="padding">
+       <div class="row ih header item_header">
+          <div class="col">Contact Name </div>
+          <div class="col">Contact No</div>
+          <div class="col"></div>
+
+        </div>
+        <div class="row ih" ng-repeat="data in idata">
+        <div class="col" ng-model="input.id" value="{{data.contact_id}}">{{data.contact_name}}</div>
+          <div class="col"> {{data.contact_number}}</div>
+
+          <div class="col"><button class=" icon ion-ios-trash button button-positive  button-clear"  ng-click="DeleteContact(data)"></button></div>
+        </div>
+
+  </ion-content>
+</ion-view>

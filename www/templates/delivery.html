@@ -1,0 +1,33 @@
+<ion-view view-title="Track Delivery" name="dashboard-view"  ng-controller="IController">
+<ion-content class="padding" ng-init="loading_event_f4()">
+
+<div class="row ih header item_header">
+  <div class="col">Item Name</div>
+  <div class="col">Contact Name</div>
+  <div class="col">Status</div>
+  <div class="col">Payment Type</div>
+  <div class="col"></div>
+  <!--           <div class="col"></div> -->
+</div>
+<div class="row ih " ng-repeat="data in d_array">
+  <div class="col">{{data.item_name}}</div>  
+  <div class="col">{{data.contact_name}}</div>
+  <div class="col" >{{data.status | true_false}}</div>
+  <div class="col">
+   <form name="myForm" novalidate >
+    <select  name="type" ng-model="data.type"  selected required>
+      <<!-- option  value="" selected>Please Select </option> -->
+      <option  ng-repeat="n in arrayOfStrings"  value="{{n}}"  ng-click="">{{n}} </option>
+
+    </select>
+
+  </div>
+</form>
+<div class="col" ><button class=" icon ion-checkmark-circled button button-positive  button-clear"  ng-click="DeliverdItem(data)"  ng-disabled="myForm.$invalid"></button></div>
+<!--   <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+</div>
+
+
+</ion-content>
+</ion-view>
+data

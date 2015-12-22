@@ -1,0 +1,30 @@
+<ion-view view-title="View Completed Transactions" name="dashboard-view" ng-controller="AppCtrl">
+<ion-content class="padding" ng-init="loading_event_f5()" >
+  <div class="row header item_header"> Please Select Date :</div><!--  <input id="date" type="date" ng-model="date" value={{date}}></div> -->
+<ionic-datepicker date="currentDate" min="minDate" max="maxDate" callback="datePickerCallback">
+    <button class="button button-block button-positive" ng-model="date" value={{date}} > {{ currentDate | date:'MMMM/dd/yyyy' }} </button>
+</ionic-datepicker>
+  <div><button class=" icon ion-document-text button button-positive  button-positive"  ng-click="select_date()"  ng-disabled="myForm.$invalid"> Search </button></div>
+
+
+<div class="row ih header item_header">
+ <div class="col">Item Name</div>
+ <div class="col">Contact Name</div>
+ <div class="col">Status</div>
+<div class="col">Date</div>
+
+
+ <!--           <div class="col"></div> -->
+</div>
+<div class="row ih" ng-repeat="data in d_array">
+   <div class="col">{{data.item_name}}</div>
+          <div class="col">{{data.contact_name}}</div>
+          <div class="col" >{{data.status | true_false}}</div>
+          <div class="col" >{{data.date}}</div>
+
+
+  <!--   <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+</div>
+
+</ion-content>
+</ion-view>

@@ -1,0 +1,45 @@
+<ion-view view-title="Add Contacts" name="dashboard-view" ng-controller="AppCtrl">
+  <ion-content class="padding">
+
+
+
+ <form name="myForm" novalidate >
+
+        <div class="list">
+          <!--   <label class="item item-input">
+                <span class="input-label">Item ID</span>
+                <input type="text" name="itemid" ng-model="input.id" ng-minlength="1" required>
+            </label> -->
+            <label class="item item-input">
+                <span class="input-label">Contact Name</span>
+                <input type="text" name="itemname" ng-model="input.iname" ng-minlength="6"  placeholder="Name"required>
+            </label>
+             
+            
+             <label class="item item-input">
+                <span class="input-label">Contact Number</span>
+                <input type="text" name="itemprice" ng-model="input.tp" ng-maxlength="10" ng-minlength="10"  ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/"  placeholder="071XXXXXX" required>
+            </label>
+        </div>
+        <div class="padding">
+            <p ng-show="myForm.itemid.$error.required">* Item id is required</p>
+   <!--          <p ng-show="myForm.itemid.$invalid && !myForm.itemid.$pristine">* Username must be an email address</p> -->
+           
+            <p ng-show="myForm.itemname.$error.required">* Contact name is required</p>
+            <p ng-show="myForm.itemname.$error.minlength">* Contact name  must be longer than 6 characters</p>
+         
+            <p ng-show="myForm.itemprice.$error.required">* Contact Number is required</p>
+             <p ng-show="myForm.itemname.$error.minlength">* Contact name  must be  10 characters</p>
+           
+
+        </div>
+        <div class="padding">
+            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="AddContact(input,myForm)">Submit</button>
+        </div>
+    </form>
+
+
+
+     
+  </ion-content>
+</ion-view>

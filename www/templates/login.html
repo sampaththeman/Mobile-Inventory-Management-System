@@ -1,0 +1,19 @@
+<ion-view hide-nav-bar="true" view-title="Sign-In" name="login-view">
+  <ion-content  class="background" scroll="false" padding="true">
+      
+      <div class="titlebar">
+        <h1 class="logintitle">Welcome</h1>
+        <h2 class="subtitle">Please login below to get started.</h1>
+      </div>
+
+      <div class="list list-inset" padding="true">
+          <label class="item item-input" >
+              <input  type="text" placeholder="Username" ng-model="data.username">
+          </label>
+          <label class="item item-input ">
+              <input type="password" placeholder="Password" ng-model="data.password">
+          </label>
+      </div>
+      <button class="button button-block " ng-click="login(data)">Login</button>
+  </ion-content>
+</ion-view>

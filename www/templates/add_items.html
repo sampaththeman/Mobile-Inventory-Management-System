@@ -1,0 +1,54 @@
+<ion-view view-title="Add Items" name="dashboard-view" ng-controller="AppCtrl">
+  <ion-content class="padding">
+
+
+
+ <form name="myForm" novalidate >
+
+        <div class="list">
+          <!--   <label class="item item-input">
+                <span class="input-label">Item ID</span>
+                <input type="text" name="itemid" ng-model="input.id" ng-minlength="1" required>
+            </label> -->
+            <label class="item item-input">
+                <span class="input-label">Item Name</span>
+                <input type="text" name="itemname" ng-model="input.iname" ng-minlength="6"  placeholder="Name"required>
+            </label>
+              <label class="item item-input">
+                <span class="input-label">Item Description</span>
+                <input type="text" name="itemdesc" ng-model="input.desc" ng-minlength="10" placeholder="Description" required>
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Item Quantity</span>
+                <input type="text" name="itemqty" ng-model="input.qty" ng-minlength="1" placeholder="Kg" required >
+            </label>
+             <label class="item item-input">
+                <span class="input-label">Item Price</span>
+                <input type="text" name="itemprice" ng-model="input.price" ng-minlength="2" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" placeholder="Rs 0.00" required>
+            </label>
+        </div>
+        <div class="padding">
+            <p ng-show="myForm.itemid.$error.required">* Item id is required</p>
+   <!--          <p ng-show="myForm.itemid.$invalid && !myForm.itemid.$pristine">* Username must be an email address</p> -->
+            <p ng-show="myForm.itemid.$error.minlength">* item id must be longer than 1 characters</p>
+            <p ng-show="myForm.itemname.$error.required">* item name is required</p>
+            <p ng-show="myForm.itemname.$error.minlength">* item name  must be longer than 6 characters</p>
+            <p ng-show="myForm.itemdesc.$error.required">* item description is required</p>
+            <p ng-show="myForm.itemdesc.$error.minlength">* item description  must be longer than 10 characters</p>
+            <p ng-show="myForm.itemqty.$error.required">* item qunatity is required</p>
+            <p ng-show="myForm.itemqty.$error.minlength">* item quantity  must be longer than 1 characters</p>
+            <p ng-show="myForm.itemprice.$error.required">* item price is required</p>
+            <p ng-show="myForm.itemprice.$error.minlength">* item quantity  must be longer than 2 characters</p>
+            <p ng-show="myForm.input.price.$valid">* item quantity  must be in decimal</p>
+
+        </div>
+        <div class="padding">
+            <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="AddItem(input,myForm)">Submit</button>
+        </div>
+    </form>
+
+
+
+     
+  </ion-content>
+</ion-view>

@@ -1,0 +1,19 @@
+<ion-view view-title="View Items" name="dashboard-view" ng-controller="IController">
+  <ion-content class="padding">
+       <div class="row  ih header  item_header">
+          <div class="col">Item Name </div>
+          <div class="col">Item Description</div>
+          <div class="col">Item Quantity</div>
+          <div class="col">Item Price</div>
+<!--           <div class="col"></div> -->
+        </div>
+        <div class="row ih" ng-repeat="data in idata">
+          <div class="col">{{data.item_name}}</div>
+          <div class="col">{{data.item_desc}}</div>
+          <div class="col">Packs {{data.item_qty}}</div>
+          <div class="col">RS {{data.item_price}}</div>
+        <!--   <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+        </div>
+
+  </ion-content>
+</ion-view>

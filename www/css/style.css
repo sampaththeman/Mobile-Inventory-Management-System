@@ -1,0 +1,128 @@
+form i.icon.error {
+  color: #ef4e3a; }
+
+form input + i.icon.error {
+  display: none;
+  margin-left: 8px; }
+
+form.ng-submitted input.ng-invalid + i.icon.error {
+  display: block; }
+
+form .has-error {
+  border-left: 5px solid #cc2511; }
+
+form .has-success {
+  border-left: 5px solid #3d8b3d; }
+
+form.ng-submitted input.ng-valid + i.icon.error {
+  display: none; }
+
+.item_header 
+{ 
+  color: Blue; 
+  font-weight: bold;
+}
+
+.user_header 
+{ 
+  color: Blue; 
+  font-weight: bold;
+}
+
+.user_card_header 
+{ 
+  color: Green ; 
+  font-weight: bold;
+}
+
+/* Red  warning for stocks*/
+.red_warning{
+ color: Red;
+ font-weight:bold;
+
+}
+
+/* table row */
+.ih .row  { 
+  margin-left: 0px;
+  
+ }
+
+ .header .col {
+  background-color:lightgrey;
+}
+
+
+ .ih .col {
+  border: solid 1px grey;
+  border-bottom-style: none;
+  border-right-style: none;
+}
+
+.ih .col:last-child {
+  border-right: solid 1px grey;
+}
+
+.row:last-child .col {
+  border-bottom: solid 1px grey;
+}
+
+/* homescreen background image */
+.background.scroll-content {
+    background: url('../img/dance5.gif') no-repeat;
+    background-size: cover;
+    background-position: center; 
+    margin: auto; 
+    z-index: 2; 
+
+}
+
+.list.list-inset{
+background-color: rgba(0,0,0,0);
+color: #FFFFFF;
+padding-top: 5px;
+}
+
+.item.item-input{
+border-color: rgba(255, 255, 255, 255);  
+background-color: rgba(0,0,0,0);
+color: #FFFFFF;
+margin-bottom:18px;
+
+}
+
+::-webkit-input-placeholder{
+ color: #FFFFFF;
+ text-transform: uppercase;
+ text-align: center;
+ font-weight: bold;
+}
+
+.button.button-block{
+background-color: rgba(29, 165, 105, 0.8);
+background: rgba(29, 165, 105, 0.8);
+color: rgba(255, 255, 255, 255);
+font-weight: bold;
+border-color: rgba(0, 0, 0, 0);
+border-width: 2px;
+
+}
+
+
+
+.logintitle{
+font-weight: 900 !important;
+font-size:50px !important;
+font-family: fantasy !important ;
+padding-top: 5px;
+text-align: center !important;
+
+}
+
+.subtitle{
+padding-left:2px; 
+padding-top: 10px;
+font-size:13px !important;
+color: rgba(56, 56, 56, 255);
+
+}

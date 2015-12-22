@@ -1,0 +1,26 @@
+<ion-view view-title="Weekly Reports" name="dashboard-view" ng-controller="WeeklyController">
+  <ion-content class="padding">
+
+       <div class="item item-text-wrap">
+            <canvas id="bar"   class="chart chart-bar" data="data" labels="labels" legend="true" series="series" options="{showTooltips: false}"></canvas>
+        </div>
+       <div class="row  ih header  item_header">
+          <div class="col">Item Name </div>
+           <div class="col">Items Sold</div>
+          <div class="col">Total</div>
+     
+<!--           <div class="col"></div> -->
+        </div>
+        <div class="row ih" ng-repeat="data in chartdata">
+          <div class="col">{{data.item_name}}</div>
+           <div class="col">{{data.SUMQTY}}</div>
+          <div class="col">{{data.SUMTOT}}</div>
+       
+        <!--   <div class="col"><button class="button" ng-click="ctrl.add($index)">Add</button></div> -->
+        </div>
+
+
+
+
+  </ion-content>
+</ion-view>

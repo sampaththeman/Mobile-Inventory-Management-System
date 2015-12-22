@@ -1,0 +1,21 @@
+<ion-view view-title="User-Attendence" name="dashboard-view">
+<div class="bar bar-subheader 
+  item-input-inset bar-light">
+  <label class="item-input-wrapper">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" ng-model="query" placeholder="Search">
+  </label>
+</div>
+
+  <ion-content class="has-subheader" ng-controller="GController">
+<ion-item  ng-repeat='item in da | filter:query'> 
+<h3 class="colour_white user_header" >  Time Arrived  : {{item.time}}</h3>
+<h3 class="colour_white user_card_header" >  Card ID       : {{item.CardID}}</h3>
+ </ion-item>
+  </ion-content>
+</ion-view>
+  
+ 
+  
+ 
+ 

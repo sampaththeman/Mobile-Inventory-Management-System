@@ -1,0 +1,79 @@
+<ion-view view-title="Order Items" name="dashboard-view" ng-controller="AppCtrl" ng-init="loading_event_f1();loading_event_f2();loading_event_f3();">
+<ion-content class="padding">
+
+<form name="myForm" novalidate >
+
+    <div class="list" >
+        <label class="item item-input">
+            <span class="input-label">Contact Name</span>
+            <select  name="contactid" ng-model="input.cid" required>
+                <option  value="" selected>Please Select </option>
+                <option  ng-repeat="item in contact_array"  value="{{item.contact_id}}"  ng-click="">{{item.contact_name}} </option>
+
+            </select>
+        </label>
+
+        <label class="item item-input">
+            <span class="input-label">Item Name</span>
+            <select  name="itemid" ng-model="input.iid"  ng-change="select_event_f1(input.iid)" required>
+                <option  value="" selected>Please Select </option>
+                <option  ng-repeat="item in item_array"  value="{{item.item_id}}"  ng-click="">{{item.item_name}} </option>
+
+            </select>
+
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Employee Name</span>
+
+            <select  name="itemeid" ng-model="input.eid" required>
+                <option  value="" selected>Please Select </option>
+                <option  ng-repeat="item in employee_array"  value="{{item.emp_id}}"  ng-click="">{{item.emp_name}} </option>
+
+            </select>
+        </label>
+
+
+        <div  class= "red_warning " ng-model="samz" ng-repeat="d in i_array "> Current Stock  Level: {{d.item_qty}}</div>
+
+
+
+
+
+        <label class="item item-input">
+            <span class="input-label">Item Quantity</span>
+            <select  id="item_q"  ng-init="select_event_f2()"  name="itemqty" ng-model="input.qty" required>
+                <option  value="" selected>Please Select </option>
+                <option   ng-repeat="it in me_array track by $index " value="{{it}}"   ng-click="">{{it}} </option>
+
+            </select>
+        </label>
+
+        <label class="item item-input" style="color: Black";>
+            <span class="input-label" >Total Amount</span>
+       <!--      <input type="text"     ng-repeat=" d in i_array" ng-value="{{d.item_price * input.qty}}">
+ -->
+           <div  id="totz" ng-model="totz" ng-repeat=" d in i_array" >{{d.item_price *  input.qty}}</div>
+
+        </label>
+
+
+
+    </div>
+    <div class="padding">
+        <p ng-show="myForm.contactid.$error.required">* Contact Name is required</p>
+        <p ng-show="myForm.itemid.$error.required">* Item Name is required</p>       
+        <p ng-show="myForm.itemeid.$error.required">* Employee Name is required</p>
+        <p ng-show="myForm.itemqty.$error.required">* item qunatity is required</p>
+
+
+    </div>
+    <div class="padding">
+        <button type="button" class="button button-block button-positive" ng-disabled="myForm.$invalid" ng-click="OrderItem(input,Myform)">Order</button>
+    </div>
+</form>
+
+
+
+
+</ion-content>
+</ion-view>
